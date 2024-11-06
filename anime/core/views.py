@@ -9,5 +9,3 @@ def clasicos(request):
 def actuales(request):
     return render(request,"core/actuales.html")
 
-def galeria(request):
-    return render(request,"core/galeria.html")
