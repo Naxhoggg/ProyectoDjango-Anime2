@@ -9,23 +9,29 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <h1>Galeria</h1>
     <div class="row">
-    {% for galeria in page_obj %}
-        
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ galeria.imagen.url }}" class="card-img-top"  height="300" width="250" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ galeria.title }}</h5>
-                      <p class="card-text">{{ galeria.description }}</p>
-                      <a href="#" class="btn btn-primary">Inicio</a>
+        {% for galeria in page_obj %}
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ galeria.imagen.url }}" class="img-fluid rounded-start" alt="...">
+                        <p class="mb-0" style="font-size: 1rem;"><strong>Autor:</strong> {{ galeria.author }}</p>
+                        <p class="mb-0" style="font-size: 1rem;"><strong>Estreno:</strong> {{ galeria.fecha_estreno }}</p>
+                        
                     </div>
-                  </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title fs-6">{{ galeria.title }}</h5>
+                            <p class="card-text small">{{ galeria.description }}</p>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+        </div>
     {% endfor %}
-    </div>  
+    </div>   
 
 
 <nav aria-label="Page navigation example">
