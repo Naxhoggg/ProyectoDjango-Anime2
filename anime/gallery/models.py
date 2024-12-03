@@ -8,6 +8,7 @@ class Galeria(models.Model):
     author=models.CharField(max_length=200)
     fecha_estreno = models.DateField(verbose_name='Fecha de estreno', null=True, blank=True)
     imagen=models.ImageField(upload_to='galeria', null=True, blank=True)
+    
 
 
     class Meta:
